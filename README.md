@@ -24,6 +24,11 @@ Ennen kuin aloitat, varmista, että seuraavat työkalut on asennettu ja konfigur
 
   Komennon tulisi tulostaa Mavenin versio ja Java-kotihakemisto.
 
+
+
+
+
+
 Tässä dokumentissa kuvataan, miten voit asentaa, käyttää ja testata Spring Boot -pohjaista sovellusta. Sovellus on saatavilla GitHubissa, ja se tukee RESTful API -kutsuja pelien ostamiseen ja voittojen keräämiseen.
 
 ### H2 tietokanta
@@ -51,7 +56,11 @@ Sovellus käynnistyy porttiin https://localhost:8443
 
 ### 3. APIen testaaminen Postmanilla
 
-Sovelluksessa oletetaan että, eventId ja winEventId tulevat pelimoottorilta.
+Sovelluksessa oletetaan että, eventId ja winEventId tulevat pelimoottorilta tai käyttäjältä testattaessa.
+
+
+
+
 
 #### Pelin osto
 
@@ -72,6 +81,10 @@ Game purchased successfully
 
 Balance: 450
 
+
+
+
+
 #### Voittojen kerääminen
 
 
@@ -88,6 +101,10 @@ https://localhost:8443/players/1/win/5
 Win collected
 
 Balance: 10450
+
+
+
+
 
 ### Testien Suorittaminen JUnitilla
 
