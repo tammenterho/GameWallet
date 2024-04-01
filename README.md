@@ -70,6 +70,7 @@ Korvaa tarvittaessa pelaajan ID ja pelin ID.
 7. Sovelluksen tulisi palauttaa Balance:n määrä (näillä ohjeilla):
 
 Game purchased successfully
+
 Balance: 450
 
 #### Voittojen kerääminen
@@ -87,6 +88,7 @@ Korvaa tarvittaessa pelaajan ID ja voiton ID. Mikäli et ole käynnistänyt sove
 5. Lähetä pyyntö ja tarkastele vastausta. Mikäli pidät sovelluksen käynnissä, voit käyttää uusia voittorahojasi uusien pelien ostamiseen (näillä ohjeilla).
 
 Win collected
+
 Balance: 10450
 
 ### Testien Suorittaminen JUnitilla
