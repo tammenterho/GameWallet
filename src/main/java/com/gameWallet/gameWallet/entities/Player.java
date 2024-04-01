@@ -43,16 +43,24 @@ public class Player {
 	}
 	
 	public long deductFromBalance(Long amount) throws InsufficientFundsException {
-		if(balance >= amount) {
-		return balance - amount;
-		} else {
-			throw new InsufficientFundsException("Insufficient funds");
-		}
-	}
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount cannot be negative");
+        }
+        if (balance >= amount) {
+            balance -= amount;
+            return balance;
+        } else {
+            throw new InsufficientFundsException("Insufficient funds");
+        }
+    }
 	
 	public long addToBalance(long amount) {
-		return balance + amount;
-	}
+	    if (amount < 0) {
+	            throw new IllegalArgumentException("Amount cannot be negative");
+	    }
+	    balance += amount;
+	    return balance;
+	    }
 
 	@Override
 	public String toString() {

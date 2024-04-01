@@ -33,7 +33,7 @@ Tässä dokumentissa kuvataan, miten voit asentaa, käyttää ja testata Spring 
 Aloita kloonaamalla projekti GitHub-repositoriosta omalle koneellesi. Voit tehdä tämän avoimella terminaalilla ja suorittamalla seuraavan komennon:
 
 ```bash
-git clone https://github.com/tammenterho/yourrepository.git
+git clone https://github.com/tammenterho/GameWallet.git
 ```
 
 ### 2. Sovelluksen käynnistäminen
@@ -52,20 +52,24 @@ Sovelluksessa oletetaan että, eventId ja winEventId tulevat pelimoottorilta.
 #### Pelin osto
 
 1. Avaa Postman ja luo uusi pyyntö.
-2. Aseta pyynnön tyyppi PUT ja URL **https://localhost:8443/players/1/purchase/2**. Korvaa tarvittaessa pelaajan ID ja pelin ID.
-3. Valitse Body-välilehti, valitse raw ja sitten JSON.
-4. Syötä bodyyn ostettavan pelin hinta JSON-muodossa, esimerkiksi: **50**. Tietokannassa olevalla pelaajalla on aina 500 aloitusrahaa. Mikäli ostat pelejä yli 500:lla rahalla, osto ei tapahdu.
-5. Lähetä pyyntö ja tarkastele vastausta.
-6. Voit tehdä useamman pyynnön, mutta muista vaihtaa URL osoitteen viimeinen numero, joka on tapahtuman tunniste eventId.
-7. Sovelluksen tulisi palauttaa Balance:n määrä.
+2. Aseta pyynnön tyyppi PUT ja URL
+
+```
+**https://localhost:8443/players/1/purchase/2**
+```
+
+Korvaa tarvittaessa pelaajan ID ja pelin ID. 3. Valitse Body-välilehti, valitse raw ja sitten JSON. 4. Syötä bodyyn ostettavan pelin hinta JSON-muodossa, esimerkiksi: **50**. Tietokannassa olevalla pelaajalla on aina 500 aloitusrahaa. Mikäli ostat pelejä yli 500:lla rahalla, osto ei tapahdu. 5. Lähetä pyyntö ja tarkastele vastausta. 6. Voit tehdä useamman pyynnön, mutta muista vaihtaa URL osoitteen viimeinen numero, joka on tapahtuman tunniste eventId. 7. Sovelluksen tulisi palauttaa Balance:n määrä.
 
 #### Voittojen kerääminen
 
 1. Luo uusi pyyntö Postmanissa.
-2. Aseta pyynnön tyyppi PUT ja URL **https://localhost:8443/players/1/win/5**. Korvaa tarvittaessa pelaajan ID ja voiton ID. Mikäli et ole käynnistänyt sovellusta uudelleen "Pelin oston" testaamisen jälkeen, tee pyynnöt eri eventId:llä. Eli katso ettei viimeinen numero ole sama kuin mitä käytit "Pelin ostoa" testatessa tai mitä olet jo käyttänyt voittojen keräämiseen.
-3. Valitse Body, valitse raw ja sitten JSON.
-4. Syötä bodyyn kerättävän voiton määrä JSON-muodossa, esim: 1000.
-5. Lähetä pyyntö ja tarkastele vastausta. Mikäli pidät sovelluksen käynnissä, voit käyttää uusia voittorahojasi uusien pelien ostamiseen.
+2. Aseta pyynnön tyyppi PUT ja URL
+
+```
+**https://localhost:8443/players/1/win/5**
+```
+
+Korvaa tarvittaessa pelaajan ID ja voiton ID. Mikäli et ole käynnistänyt sovellusta uudelleen "Pelin oston" testaamisen jälkeen, tee pyynnöt eri eventId:llä. Eli katso ettei viimeinen numero ole sama kuin mitä käytit "Pelin ostoa" testatessa tai mitä olet jo käyttänyt voittojen keräämiseen. 3. Valitse Body, valitse raw ja sitten JSON. 4. Syötä bodyyn kerättävän voiton määrä JSON-muodossa, esim: 1000. 5. Lähetä pyyntö ja tarkastele vastausta. Mikäli pidät sovelluksen käynnissä, voit käyttää uusia voittorahojasi uusien pelien ostamiseen.
 
 ### Testien Suorittaminen JUnitilla
 
@@ -79,3 +83,7 @@ mvnw test
 ```
 
 Testit suoritetaan, ja saat yhteenvedon suoritetuista testeistä sekä tiedon, menivätkö ne läpi vai eivät.
+
+### H2 tietokanta
+
+H2 Tietokanta on Java-pohjainen relationaalinen tietokanta, joka on suunniteltu olemaan erittäin nopea, kevyt ja helppokäyttöinen. H2-tietokanta toimii suoraan sovelluksen kanssa samassa JVM:ssä (Java Virtual Machine). Tämä tarkoittaa, että tietokantaan pääsee käsiksi vain kyseisen sovelluksen kautta, ja se on käytettävissä ainoastaan sovelluksen ollessa käynnissä. Tämä moodi sopii erinomaisesti kehitys- ja testausympäristöihin, koska se ei vaadi erillisen tietokantapalvelimen pystyttämistä ja konfigurointia.
