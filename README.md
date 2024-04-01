@@ -55,14 +55,13 @@ Sovelluksessa oletetaan että, eventId ja winEventId tulevat pelimoottorilta.
 
 #### Pelin osto
 
-1. Avaa Postman ja luo uusi pyyntö.
-2. Aseta pyynnön tyyppi PUT ja URL
 
 ```
 https://localhost:8443/players/1/purchase/2
 ```
 
-Korvaa tarvittaessa pelaajan ID ja pelin ID. 
+1. Avaa Postman ja luo uusi pyyntö.
+2. Aseta pyynnön tyyppi PUT ja URL. Korvaa tarvittaessa pelaajan ID ja pelin ID. 
 3. Valitse Body-välilehti, valitse raw ja sitten JSON. 
 4. Syötä bodyyn ostettavan pelin hinta JSON-muodossa, esimerkiksi: **50**. Tietokannassa olevalla pelaajalla on aina 500 aloitusrahaa. Mikäli ostat pelejä yli 500:lla rahalla, osto ei tapahdu. 
 5. Lähetä pyyntö ja tarkastele vastausta. 
@@ -75,14 +74,13 @@ Balance: 450
 
 #### Voittojen kerääminen
 
-1. Luo uusi pyyntö Postmanissa.
-2. Aseta pyynnön tyyppi PUT ja URL
 
 ```
 https://localhost:8443/players/1/win/5
 ```
 
-Korvaa tarvittaessa pelaajan ID ja voiton ID. Mikäli et ole käynnistänyt sovellusta uudelleen "Pelin oston" testaamisen jälkeen, tee pyynnöt eri eventId:llä. Eli katso ettei viimeinen numero ole sama kuin mitä käytit "Pelin ostoa" testatessa tai mitä olet jo käyttänyt voittojen keräämiseen. 
+1. Luo uusi pyyntö Postmanissa.
+2. Aseta pyynnön tyyppi PUT ja URL. Korvaa tarvittaessa pelaajan ID ja voiton ID. Mikäli et ole käynnistänyt sovellusta uudelleen "Pelin oston" testaamisen jälkeen, tee pyynnöt eri eventId:llä. Eli katso ettei viimeinen numero ole sama kuin mitä käytit "Pelin ostoa" testatessa tai mitä olet jo käyttänyt voittojen keräämiseen. 
 3. Valitse Body, valitse raw ja sitten JSON. 
 4. Syötä bodyyn kerättävän voiton määrä JSON-muodossa, esim: 1000. 
 5. Lähetä pyyntö ja tarkastele vastausta. Mikäli pidät sovelluksen käynnissä, voit käyttää uusia voittorahojasi uusien pelien ostamiseen (näillä ohjeilla).
@@ -93,7 +91,7 @@ Balance: 10450
 
 ### Testien Suorittaminen JUnitilla
 
-Sovelluksen mukana tulee joukko JUnit-testejä, jotka voit suorittaa varmistaaksesi, että sovelluksen perustoiminnot toimivat odotetulla tavalla.
+Sovelluksen mukana tulee joukko JUnit-testejä, jotka voit suorittaa varmistaaksesi, että sovelluksen perustoiminnot toimivat odotetulla tavalla. 
 
 1. Avaa terminaali projektikansiossa.
 2. Suorita testit komennolla:
